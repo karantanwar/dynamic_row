@@ -1,5 +1,5 @@
 name: dynamic_row
-description: Dynamic row widget for flutter
+description: A dynamic row widget to show children as a combination of rows and columns depending on screen size
 version: 0.0.1
 author: Karan Tanwar <karantanwar.nitd@gmail.com>
 homepage: https://github.com/karantanwar/dynamic_row

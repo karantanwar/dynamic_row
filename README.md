@@ -7,7 +7,7 @@ A dynamic row widget to show children as a combination of rows and columns depen
 
 ```yaml
 dependencies:
-  dynamic_row: ^1.0.0
+  dynamic_row: ^0.0.1
 ```
 
 ### Import
