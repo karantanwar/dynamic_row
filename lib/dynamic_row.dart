@@ -7,10 +7,8 @@ class DyRow extends StatelessWidget {
   final double maxWidth;
   final double maxWidthForMedium;
   final double maxWidthForSmall;
-  final double maxWidthForLarge;
   final int breakForMedium;
   final int breakForLarge;
-
   final int breakForSmall;
   final CrossAxisAlignment crossAxisAlignmentRow;
   final CrossAxisAlignment crossAxisAlignmentColumn;
@@ -27,9 +25,8 @@ class DyRow extends StatelessWidget {
       this.mainAxisAlignmentRow = MainAxisAlignment.start,
       this.children,
       this.maxWidth,
-      this.maxWidthForLarge,
-      this.maxWidthForMedium,
-      this.maxWidthForSmall});
+      this.maxWidthForMedium = 400,
+      this.maxWidthForSmall = 350});
 
   Widget getDyRow(int widthLimit) {
     List<Widget> columnChildren = [];
@@ -37,9 +34,9 @@ class DyRow extends StatelessWidget {
     for (int i = 0; i < columnSize; i++) {
       List<Widget> rowChildren = [];
       if (i == columnSize - 1) {
-        rowChildren = children.sublist(i * widthLimit, children.length - 1);
+        rowChildren = children.sublist(i * widthLimit, children.length);
       } else {
-        rowChildren = children.sublist(i * widthLimit, ((i + 1) * widthLimit) - 1);
+        rowChildren = children.sublist(i * widthLimit, ((i + 1) * widthLimit));
       }
 
       columnChildren.add(Row(
@@ -80,6 +77,6 @@ class DyRow extends StatelessWidget {
       return getDyRow(breakForMedium);
     }
 
-    return getDyRow(maxWidthForLarge == 0 ? children.length : maxWidthForLarge);
+    return getDyRow(breakForLarge == 0 ? children.length : breakForLarge);
   }
 }
