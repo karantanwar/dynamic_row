@@ -32,10 +32,10 @@ class DyRow extends StatelessWidget {
       this.maxWidthForSmall});
 
   Widget getDyRow(int widthLimit) {
-    List<Widget> columnChildren;
+    List<Widget> columnChildren = [];
     int columnSize = (children.length / widthLimit).ceil();
     for (int i = 0; i < columnSize; i++) {
-      List<Widget> rowChildren;
+      List<Widget> rowChildren = [];
       if (i == columnSize - 1) {
         rowChildren = children.sublist(i * widthLimit, children.length - 1);
       } else {
